@@ -3,8 +3,14 @@
 /** FONTS **/
 @font-face {
   font-weight: 400; /* Соответствует значению normal */
-  font-family: 'OpenSans-Regular';
+  font-family: 'OpenSans';
   src: url('../assets/fonts/OpenSans-Regular.ttf');
+}
+
+@font-face {
+  font-weight: 700; /* Соответствует значению normal */
+  font-family: 'OpenSans';
+  src: url('../assets/fonts/OpenSans-Bold.ttf');
 }
 
 @font-face {
@@ -26,10 +32,17 @@
   --blue: #1085c5;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
+  margin: 0;
+  padding: 0;
+
   color: var(--dark);
   font-size: 16px;
-  font-family: 'OpenSans-Regular', sans-serif;
+  font-family: 'OpenSans', sans-serif;
   line-height: 1.6em;
 }
 
@@ -41,19 +54,113 @@ h3 {
 }
 
 h1 {
-  height: 72px;
+  font-size: 72px;
 }
 
 h2 {
-  height: 60px;
+  font-size: 60px;
 }
 
 h3 {
-  height: 34px;
+  font-size: 34px;
 }
 
 section {
-  min-width: 1110px;
+  width: 1110px;
   margin: 0 auto;
   padding: 100px 0 100px 0;
+}
+
+.container {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+}
+
+.container::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: -1;
+
+  width: 100%;
+  height: 100vh;
+
+  background-image: url("../assets/images/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.1;
+
+  content: '';
+}
+
+.row {
+  position: relative;
+
+  display: flex;
+
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.header-img {
+  position: relative;
+  top: -45px;
+  right: -308px;
+
+  max-height: 525px;
+}
+
+.header-title {
+  position: absolute;
+  top: 49px;
+  left: 0;
+
+  white-space: nowrap;
+}
+
+.header-title-part-color {
+  color: var(--primary);
+}
+
+.header-txt {
+  position: relative;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: -85px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px 12px 24px;
+
+  text-decoration: none;
+}
+
+.btn-bg-primary {
+  background: var(--primary);
+}
+
+.color-white {
+  color: var(--white);
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.pl-15 {
+  padding-left: 15px;
 }
